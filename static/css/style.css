@@ -1,0 +1,341 @@
+/* ==================================================
+   Root Variables (Theme Colors)
+================================================== */
+:root {
+    --main-bg: #0b0f0e;
+    --card-bg: #141818;
+    --nav-bg: #000000;
+
+    --text-main: #e6f4ea;
+    --text-sec: #9fb3a8;
+
+    --accent-green: #00ff7f; /* Neon Green */
+    --accent-red: #ff1744;
+}
+
+
+/* ==================================================
+   Global Styles
+================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl; /* Arabic support */
+}
+
+a {
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #69f0ae;
+}
+
+
+/* ==================================================
+   Navbar
+================================================== */
+nav {
+    background-color: var(--nav-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--card-bg);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--accent-green);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--accent-green);
+    letter-spacing: 0.5px;
+}
+
+
+/* ==================================================
+   User Menu
+================================================== */
+.user-menu {
+    position: relative;
+}
+
+.user-trigger {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid #1f2a2a;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.avatar-pill{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-green);
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    min-width: 180px;
+    padding: 8px;
+    background: var(--card-bg);
+    border: 1px solid #1f2a2a;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 0 14px rgba(0, 255, 127, 0.12);
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: var(--text-main);
+}
+
+.user-dropdown a:hover {
+    background: #0e1313;
+    color: var(--accent-green);
+}
+
+
+/* ==================================================
+   Layout Containers
+================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* ==================================================
+   Buttons
+================================================== */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-green {
+    background-color: var(--accent-green);
+    color: #000;
+}
+
+.btn-red {
+    background-color: var(--accent-red);
+    color: #fff;
+}
+
+
+/* ==================================================
+   Forms
+================================================== */
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: var(--text-main);
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--accent-green);
+}
+
+
+/* ==================================================
+   Cards & Grids
+================================================== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(
+        180deg,
+        rgba(20, 24, 24, 0.95),
+        rgba(20, 24, 24, 0.85)
+    );
+    border: 1px solid #1f2a2a;
+    box-shadow: 0 0 10px rgba(0, 255, 127, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 16px rgba(0, 255, 127, 0.15);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* ==================================================
+   Social Links
+================================================== */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--accent-green);
+}
+
+
+/* ==================================================
+   Chat UI
+================================================== */
+.chat-box {
+    height: 400px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 1px solid #333;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.user {
+    background-color: #333;
+    text-align: right;
+}
+
+.message.bot {
+    background-color: #1a3c2b;
+    text-align: left;
+    border-left: 3px solid var(--accent-green);
+}
+
+
+/* ==================================================
+   Dashboard
+================================================== */
+.dashboard-section {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   Alerts
+================================================== */
+.alert {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: var(--accent-red);
+    color: #fff;
+}
+
+
+/* ==================================================
+   Notifications Overlay
+================================================== */
+.notify-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notify-card {
+    min-width: 280px;
+    padding: 24px;
+    text-align: center;
+    background: var(--card-bg);
+    border: 1px solid #1f2a2a;
+    border-radius: 12px;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 64px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.circle.success {
+    background: radial-gradient(circle, #00ff7f 0%, #00c76a 60%, #0c221c 100%);
+    box-shadow: 0 0 18px rgba(0, 255, 127, 0.5);
+}
+
+.circle.error {
+    background: radial-gradient(circle, #ff3d3d 0%, #c72626 60%, #2a0c0c 100%);
+    box-shadow: 0 0 18px rgba(255, 23, 68, 0.5);
+}
+
+.notify-text {
+    font-weight: 600;
+    color: var(--text-main);
+}
